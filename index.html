@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local LLM Chat</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>💬 Local LLM Chat</h1>
+            <p class="subtitle">Powered by LM Studio</p>
+        </header>
+        
+        <main>
+            <section class="card chat-container">
+                <div class="settings-bar">
+                    <input 
+                        type="text" 
+                        id="apiEndpoint" 
+                        placeholder="API Endpoint (e.g., http://localhost:1234/v1/chat/completions)"
+                        value="http://localhost:1234/v1/chat/completions"
+                    >
+                    <button id="testConnection" class="test-btn">Test Connection</button>
+                    <span id="connectionStatus"></span>
+                </div>
+                
+                <div id="chatMessages" class="chat-messages">
+                    <div class="message system-message">
+                        <strong>System:</strong> Ready to chat! Make sure LM Studio is running.
+                    </div>
+                </div>
+                
+                <div class="chat-input-container">
+                    <textarea 
+                        id="userInput" 
+                        placeholder="Type your message here..."
+                        rows="3"
+                    ></textarea>
+                    <button id="sendButton">Send</button>
+                    <button id="clearButton" class="secondary-btn">Clear Chat</button>
+                </div>
+            </section>
+            
+            <section class="card info-card">
+                <h3>📝 Instructions</h3>
+                <ol>
+                    <li>Start LM Studio and load a model</li>
+                    <li>Enable the local server in LM Studio (usually runs on port 1234)</li>
+                    <li>Click "Test Connection" to verify it's working</li>
+                    <li>Start chatting!</li>
+                </ol>
+            </section>
+        </main>
+    </div>
+    
+    <script src="chat.js"></script>
+</body>
+</html>
